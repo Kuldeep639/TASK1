@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div id="event-list">
+            <h2>Event List</h2>
+            <ul id="events-list"></ul>
+        </div>
+
+        <div id="event-details" class="hidden">
+            <h2>Event Details</h2>
+            <p><strong>Name:</strong> <span id="event-name"></span></p>
+            <p><strong>Date:</strong> <span id="event-date"></span></p>
+            <p><strong>Location:</strong> <span id="event-location"></span></p>
+            <p><strong>Description:</strong> <span id="event-description"></span></p>
+            <button onclick="goToEventList()">Back</button>
+        </div>
+
+        <div id="create-event" class="hidden">
+            <h2>Create Event</h2>
+            <form id="create-event-form" onsubmit="createEvent(event)">
+                <label for="name">Event Name:</label>
+                <input type="text" id="name" required>
+                <label for="date">Event Date:</label>
+                <input type="date" id="date" required>
+                <label for="location">Event Location:</label>
+                <input type="text" id="location" required>
+                <label for="description">Event Description:</label>
+                <textarea id="description" required></textarea>
+                <button type="submit">Create Event</button>
+            </form>
+            <button onclick="goToEventList()">Back</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
